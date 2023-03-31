@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
+body{
+  font-family: 'Kanit', sans-serif;
+}
+
+.navbar-brand{
+  font-family: 'Titan One', cursive;
+}
+
+.user-app{
+  background-image: linear-gradient(whitesmoke, rgb(199, 199, 255));
+  min-height: 100vh;
+}
+
+#switch{
+  text-decoration: none;
+}
+
+#switch:hover{
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.dropdown-item:hover{
+  cursor: pointer;
+}
+
+.responsive-text{
+  font-size: 2.5vw;
+}
+
+.list-group-item{
+  cursor: pointer;
+  transition-duration: .2s;
+}
+
+.list-group-item:hover{
+  background-color: rgb(223, 223, 223);
+}
+
+.category-item{
+  border: solid 1px black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: .3s;
+  opacity: 0.5;
+  width: 20%;
+}
+
+.category-item:hover{
+  opacity: 1;
+}
+
+#title{
+  opacity: 0.5;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover{
+  color: inherit;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  border-radius: 6px;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.overlay:hover{
+  opacity: 0.9;
+}
+
+.card-container{
+  cursor: pointer;
+}
+
+.overlay-text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#empty{
+  max-height: 300px;
+}
+
+#cartContainer{
+  overflow-y: scroll;
+  max-height: 400px;
+}
+
+.cart-item{
+  cursor: pointer;
+  transition-duration: .2s;
+}
+
+.cart-item:hover{
+  background-color: rgb(230, 230, 230);
+}
+
+.card{
+  width: 12rem;
+  border: none;
+}
+
+.smaller-card{
+  width: 9rem;
+  border: none;
+}
+
+.horizontal-list{
+  overflow-x: scroll;
+}
+
+#product-image{
+  max-width: 80%;
+}
+
+#cart-product-image{
+  height: 80px;
+  width: 80px;
+}
+
+#notFound{
+  width: 300px;
+  min-width: 200px;
+  border-radius: 50%;
+}
+
+.voucher{
+  position: relative;
+  cursor: pointer;
+}
+
+#banner1{
+  background-color: #e3052a;
+}
+
+#banner2{
+  background-color: #f5f5f5;
+}
+
+#discount1{
+  max-height: 300px;
+}
+
+#discount2{
+  max-height: 300px;
+}
+
+/* Customize scrollbar*/
+::-webkit-scrollbar-track
+{
+	border-radius: 6px;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+  height: 8px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 6px;
+	background-color: grey;
+}
+
+@media only screen and (min-width: 768px) {
+  .responsive-icon{
+      font-size: 2rem;
+  }
+
+  .responsive-text{
+    font-size: 1rem;
+  }
+
+  .card{
+    width: 15rem;
+  }
+  
+  .smaller-card{
+    width: 15rem;
+    border: none;
+  }
+
+  .voucher{
+    width: 80%;
+  }
+}
