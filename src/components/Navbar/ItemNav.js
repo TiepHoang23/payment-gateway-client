@@ -27,6 +27,14 @@ const ItemNav = () => {
       </div>
       <ul className='dropdown-menu'>
         <li>
+          <div
+            className='dropdown-item'
+            onClick={() => navigate('/paymentHistory')}
+          >
+            Payment History
+          </div>
+        </li>
+        <li>
           <div className='dropdown-item' onClick={handleLogout}>
             Logout
           </div>

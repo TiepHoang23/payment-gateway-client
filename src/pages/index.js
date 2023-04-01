@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Register from './Register';
 import Cart from '../components/Cart/Cart';
 import NotFound from './NotFound';
+import History from './history';
 
 const UserApp = () => {
   const { user } = useContext(AuthContext);
@@ -21,6 +22,10 @@ const UserApp = () => {
           element={user ? <Navigate to='/' /> : <Register />}
         />
 
+        <Route
+          path='/paymentHistory'
+          element={user ? <History /> : <Navigate to='/' />}
+        />
         <Route path='/cart' element={user ? <Cart /> : <Navigate to='/' />} />
 
         <Route path='*' element={<NotFound />} />
