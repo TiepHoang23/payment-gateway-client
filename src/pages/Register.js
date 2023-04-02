@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -28,7 +29,7 @@ const Register = () => {
 
       if (response.status) {
         toast.success('Registration success!');
-        navigate('/login');
+        navigate('/');
       } else {
         toast.error(response.data);
       }
