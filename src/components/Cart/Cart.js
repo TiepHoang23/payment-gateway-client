@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../contexts/AuthContext';
 import CartItem from './CartItem';
-
+import { useNavigate } from 'react-router-dom';
 const Cart = () => {
   const [cartData, setCartData] = useState(null);
   const { user } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchCartData = async () => {
       try {
@@ -34,26 +34,14 @@ const Cart = () => {
     fetchCartData();
   }, [user.token]);
 
-  const handlePayment = async () => {
-    try {
-      const url = 'http://localhost:8000/api/payment/paymentCart';
-      const response = await axios.post(
-        url,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        }
-      );
-      if (!response.data.status) {
-        throw new Error(response.data.message);
-      }
-      window.location.replace(response.data.urlRedirect);
-    } catch (error) {
-      console.error(error);
-      toast.error('Error making payment');
-    }
+  const handleCheckout = async () => {
+    // console.log(cartData.total);
+    navigate('/checkout', {
+      state: {
+        listItem: cartData.itemList,
+        total: cartData.total,
+      },
+    });
   };
   return (
     <div
@@ -85,8 +73,8 @@ const Cart = () => {
         </div>
       )}
       <div className='d-flex justify-content-end'>
-        <button className='btn btn-primary mt-3 pl-3 ' onClick={handlePayment}>
-          CONTINUE TO PAYMENT
+        <button className='btn btn-primary mt-3 pl-3 ' onClick={handleCheckout}>
+          CONTINUE TO CHECKOUT
         </button>
       </div>
     </div>
