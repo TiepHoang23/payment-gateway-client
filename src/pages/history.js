@@ -19,6 +19,7 @@ const History = () => {
           }
         );
         const responseData = response.data;
+        console.log(responseData);
         if (!responseData.status) {
           toast.error(responseData.message);
           return;

@@ -22,10 +22,14 @@ const HistoryTable = ({ payments }) => {
                 <td className='border p-2'>
                   {new Date(payment.createdAt).toLocaleDateString()}
                 </td>
-                <td className='border p-2'>{`${payment.transactions[0].amount.total} ${payment.transactions[0].amount.currency}`}</td>
-                <td className='border p-2'>
-                  {payment.transactions[0].description}
-                </td>
+                {payment.transactions.length !== 0 && (
+                  <td className='border p-2'>{`${payment.transactions[0].amount.total} ${payment.transactions[0].amount.currency}`}</td>
+                )}
+                {payment.transactions.length !== 0 && (
+                  <td className='border p-2'>
+                    {payment.transactions[0].description}
+                  </td>
+                )}
               </tr>
             ))}
           </tbody>
